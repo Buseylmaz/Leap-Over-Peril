@@ -6,6 +6,8 @@ public class ObstacleMove : MonoBehaviour
 {
     [SerializeField] float obstacleMoveSpeed;
 
+    public PlayerController playerController;
+
     private void Update()
     {
         Move();
@@ -14,7 +16,11 @@ public class ObstacleMove : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.left * obstacleMoveSpeed * Time.deltaTime);
+        if (playerController.isDead == false)
+        {
+            transform.Translate(Vector3.left * obstacleMoveSpeed * Time.deltaTime);
+        }
+        
     }
 
     void ObstacleDestroy()

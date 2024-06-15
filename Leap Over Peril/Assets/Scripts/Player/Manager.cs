@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Manager : MonoBehaviour
 
     [Header("Score")]
     public int totalScore;
-    //[SerializeField] Text scoreText;
+    [SerializeField] Text scoreText;
 
     [Space]
 
@@ -19,8 +20,6 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
-
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -34,7 +33,7 @@ public class Manager : MonoBehaviour
 
     public void CanvasScoreText()
     {
-        //scoreText.text = totalScore.ToString();
+        scoreText.text = totalScore.ToString();
     }
 
 

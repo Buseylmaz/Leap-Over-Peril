@@ -20,6 +20,9 @@ public class ObstacleSpawnerManager : MonoBehaviour
     [SerializeField] float startDelay;
     [SerializeField] float repeatRate;
 
+
+    public PlayerController playerController;
+
     private void Start()
     {
         InvokeRepeating("ObstacleSpawner", startDelay, repeatRate);
@@ -31,8 +34,11 @@ public class ObstacleSpawnerManager : MonoBehaviour
 
         Vector3 spawnerLocation = new Vector3(xPoint, yPoint, zPoint);
 
-        Instantiate(obstaclePrefabs[index], spawnerLocation, obstaclePrefabs[index].transform.rotation);
 
+        if (playerController.isDead == false)
+        {
+            Instantiate(obstaclePrefabs[index], spawnerLocation, obstaclePrefabs[index].transform.rotation);
+        }
         
     }
 }

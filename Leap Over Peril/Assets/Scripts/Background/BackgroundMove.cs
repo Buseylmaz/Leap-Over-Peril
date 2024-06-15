@@ -6,6 +6,8 @@ public class BackgroundMove : MonoBehaviour
 {
     [SerializeField] float backgroundSpeed;
 
+    public PlayerController playerController;
+
     private void Update()
     {
         Move();
@@ -13,6 +15,10 @@ public class BackgroundMove : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * backgroundSpeed);
+        if (playerController.isDead == false)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * backgroundSpeed);
+        }
+        
     }
 }

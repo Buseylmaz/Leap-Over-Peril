@@ -56,14 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Player\Manager.cs" />
     <Compile Include="Assets\Scripts\Background\BackgroundMove.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\Sounds.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstacleMove.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Background\RepeatBackground.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstacleSpawnerManager.cs" />
-    <Compile Include="Assets\Scripts\Player\Manager.cs" />
-    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Audio\Sounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
