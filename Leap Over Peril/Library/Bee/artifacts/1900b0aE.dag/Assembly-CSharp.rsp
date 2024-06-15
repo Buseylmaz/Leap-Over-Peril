@@ -349,6 +349,7 @@
 "Assets/Scripts/Background/RepeatBackground.cs"
 "Assets/Scripts/Obstacles/ObstacleMove.cs"
 "Assets/Scripts/Obstacles/ObstacleSpawnerManager.cs"
+"Assets/Scripts/Player/PlayerController.cs"
 -langversion:9.0
 
 /deterministic

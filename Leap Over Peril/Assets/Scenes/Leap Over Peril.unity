@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &100828797
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 6039788173817362130, guid: 7788dca23a872af438bcf8643de15b20, type: 3}
   xPoint: 100
   yPoint: 0.2700005
-  zPoint: -1.298208
+  zPoint: 0
   startDelay: 2
   repeatRate: 2
 --- !u!1 &170076733
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 2014335012}
   m_Layer: 9
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,11 +622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649042180997123170, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6649042180997123170, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.75
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 6649042180997123170, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
       propertyPath: m_LocalPosition.y
@@ -664,5 +664,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8591509603739309022, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
+--- !u!1 &6649042181905363408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6649042180997091394, guid: 02f1b28649415654ca9501e0863ff957, type: 3}
+  m_PrefabInstance: {fileID: 6649042181905363407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6649042181905363409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649042181905363408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4549a1f3ac6cb6c478fb68a237f1cb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSpeed: 8
+  isGround: 0
