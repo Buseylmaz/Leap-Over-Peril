@@ -58,9 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background\BackgroundMove.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstacleMove.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Background\RepeatBackground.cs" />
     <Compile Include="Assets\Scripts\Obstacles\ObstacleSpawnerManager.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\Manager.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\Sounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
