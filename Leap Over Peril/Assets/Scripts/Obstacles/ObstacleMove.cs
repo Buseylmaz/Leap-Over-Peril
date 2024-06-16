@@ -16,7 +16,8 @@ public class ObstacleMove : MonoBehaviour
 
     void Move()
     {
-        if (playerController.isDead == false)
+
+        if (playerController != null && !playerController.isDead)
         {
             transform.Translate(Vector3.left * obstacleMoveSpeed * Time.deltaTime);
         }

@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour
 
     [Header("Heart")]
     public int totalHeart;
-    //[SerializeField] Text heartText;
+    [SerializeField] Text heartText;
 
 
     private void Awake()
@@ -39,6 +39,6 @@ public class Manager : MonoBehaviour
 
     public void CanvasHeartText()
     {
-        //heartText.text = totalHeart.ToString();
+        heartText.text = totalHeart.ToString();
     }
 }

@@ -20,11 +20,17 @@ public class PlayerController : MonoBehaviour
     [Header("Game Over")]
     public bool isDead = false;
 
-    
+
+    [Header("Particle System")]
+    [SerializeField] ParticleSystem explosionParticle;
+    [SerializeField] ParticleSystem walkParticle;
+
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -38,8 +44,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && isGround==true && isDead==false)
         {
-            
+            walkParticle.Stop();
+
             rigidbody.AddForce(Vector3.up * jumpSpeed , ForceMode.Impulse);
+
             animator.SetTrigger("Jump_trig");
 
             AudioManager.Instance.PlaySFX("Jump");
@@ -54,8 +62,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGround = true;
+
+            walkParticle.Play();
+
         }
-        
+
     }
 
 
@@ -64,20 +75,25 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             manager.totalHeart -= 1;
+            manager.CanvasHeartText();
+
+
 
             AudioManager.Instance.PlaySFX("Crash");
-
-            //Çarpma Anim
 
 
             if (manager.totalHeart <= 0)
             {
+                explosionParticle.Play();
+                walkParticle.Stop();
+
                 isDead = true;
 
                 manager.totalHeart = 0;
+                manager.CanvasHeartText();
 
                 animator.SetBool("Death_b",true);
-
+                
                 StartCoroutine(ScenePaasTime());
                 
 
@@ -86,14 +102,16 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Score"))
         {
-            manager.totalScore += 1; 
+            manager.totalScore += 1;
+            manager.CanvasScoreText();
+
         }
     }
 
 
     IEnumerator ScenePaasTime()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(4.0f);
         SceneManager.LoadScene(1);
     }
 }
